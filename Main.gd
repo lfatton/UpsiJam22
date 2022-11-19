@@ -47,8 +47,8 @@ func new_cat():
 	cat.position = cat_spawn_location.position
 	add_child(cat)
 	happiness += cat.happiness
-	if(happiness > 10):
-		happiness = -10
+	#if(happiness > 10):
+	#	happiness = -10
 	$Camera/HUD.update_happiness(happiness)
 
 

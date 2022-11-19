@@ -13,8 +13,8 @@ func _process(delta):
 
 		get_parent().velocity.x = randf_range(-300, 300)
 		if get_parent().velocity.x < 0:
-			get_parent().scale.y = -1
+			get_parent().scale.y = -1 * abs(get_parent().scale.y)
 			get_parent().rotation = PI
 		else:
-			get_parent().scale.y = 1
+			get_parent().scale.y = 1 * abs(get_parent().scale.y)
 			get_parent().rotation = 0
