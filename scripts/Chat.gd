@@ -18,6 +18,29 @@ func _ready():
 	add_child(move_scene.instantiate())
 	add_child(idle_scene.instantiate())
 	
+	_set_materials()
+	_randomize_body_parts()
+	
+	
+func _set_materials():
 	$Body.set_material(make_material())
 	$Head.set_material(make_material())
 	$Tail.set_material(make_material())
+	$HappyTail.set_material(make_material())
+	$RabaTail.set_material(make_material())
+
+
+func _randomize_body_parts():
+	var die = randi() % 100
+	
+	if die < 5:
+		remove_child($Tail)
+		remove_child($HappyTail)
+	elif die < 50:
+		remove_child($HappyTail)
+		remove_child($RabaTail)
+	else:
+		remove_child($Tail)
+		remove_child($RabaTail)
+		if die < 75:
+			$HappyTail.scale.y *= -1
