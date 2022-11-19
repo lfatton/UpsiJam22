@@ -14,7 +14,7 @@ func _process(delta):
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton:
-		if event.is_pressed():
+		if event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT:
 			if (closed):
 				closed = false
 				$InfoDoor.text = "Click to close"
