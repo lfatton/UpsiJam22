@@ -10,9 +10,8 @@ func show_message(text):
 
 func show_game_over():
 	show_message("Oh no! All your cats are unhappy :(\nGame Over :((")
-	await get_tree().create_timer(3).timeout
+	await get_tree().create_timer(5).timeout
 	show_message("Keep your cats happy by taking\ntheir picture once a day!")
-	await get_tree().create_timer(1).timeout
 	$StartButton.show()
 
 

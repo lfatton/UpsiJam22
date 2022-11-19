@@ -24,9 +24,12 @@ func _process(delta):
 
 
 func game_over():
+	happiness = 0
 	$Music.stop()
+	$GameOver.play()
 	get_tree().call_group("cats", "queue_free")
 	$DayTimer.stop()
+	gameStarted = false
 	$Camera/HUD.show_game_over()
 
 
