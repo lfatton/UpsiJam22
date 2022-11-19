@@ -9,28 +9,26 @@
 size = Vector2(18, 13.5)
 
 [node name="Chat" type="RigidBody2D"]
-position = Vector2(23, -73)
 mass = 8.68
 lock_rotation = true
 script = ExtResource("1_crp2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-22, 43.75)
 shape = SubResource("RectangleShape2D_1sglf")
 
 [node name="Head" type="Sprite2D" parent="."]
-position = Vector2(-11, 31)
+position = Vector2(11.6, -12.4)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_0uheg")
 
 [node name="Body" type="Sprite2D" parent="."]
-position = Vector2(-22, 41)
+position = Vector2(0.600002, -2.39999)
 rotation = 3.14159
 scale = Vector2(0.3, -0.3)
 texture = ExtResource("2_hysq4")
 
 [node name="Tail" type="Sprite2D" parent="."]
-position = Vector2(-37, 41)
+position = Vector2(-14.4, -2.40002)
 rotation = 3.14159
 scale = Vector2(0.3, -0.3)
 texture = ExtResource("3_1crbh")
