@@ -1,4 +1,4 @@
-extends Area2D
+extends StaticBody2D
 
 var closed = true
 
@@ -19,12 +19,12 @@ func _on_input_event(viewport, event, shape_idx):
 				closed = false
 				$InfoDoor.text = "Click to close"
 				$AnimatedSprite.animation = "open"
-				collision_mask = 2
+				collision_layer = 2
 			else:
 				closed = true
 				$InfoDoor.text = "Click to open"
 				$AnimatedSprite.animation = "closed"
-				collision_mask = 1
+				collision_layer = 1
 
 
 func _on_mouse_entered():

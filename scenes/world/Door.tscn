@@ -21,9 +21,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uvgq"]
 size = Vector2(6.66666, 64.5)
 
-[node name="Door" type="Area2D"]
+[node name="Door" type="StaticBody2D"]
 scale = Vector2(3, 3)
-priority = 1.0
+input_pickable = true
 script = ExtResource("1_i8vdq")
 
 [node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
