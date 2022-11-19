@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://gjpgn3u26ki3"]
+[gd_scene load_steps=7 format=3 uid="uid://gjpgn3u26ki3"]
 
-[ext_resource type="Texture2D" uid="uid://c78jkobe0p5qd" path="res://assets/chat/head.png" id="1_0uheg"]
+[ext_resource type="Texture2D" uid="uid://dkar4af6llerx" path="res://assets/chat/head.png" id="1_0uheg"]
 [ext_resource type="Script" path="res://scripts/Chat.gd" id="1_crp2f"]
-[ext_resource type="Texture2D" uid="uid://br6vxueigis5o" path="res://assets/chat/better-body.png" id="2_hysq4"]
-[ext_resource type="Texture2D" uid="uid://cj0ewrjfy6kau" path="res://assets/chat/tail.png" id="3_1crbh"]
+[ext_resource type="PackedScene" uid="uid://c3beg3kt3gxen" path="res://Move.tscn" id="2_3h5l1"]
+[ext_resource type="Texture2D" uid="uid://tbxtl1hht4o1" path="res://assets/chat/better-body.png" id="2_hysq4"]
+[ext_resource type="Texture2D" uid="uid://ct51b31ofa0aq" path="res://assets/chat/tail.png" id="3_1crbh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sglf"]
 size = Vector2(18, 13.5)
@@ -12,6 +13,7 @@ size = Vector2(18, 13.5)
 mass = 8.68
 lock_rotation = true
 script = ExtResource("1_crp2f")
+move_scene = ExtResource("2_3h5l1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_1sglf")
