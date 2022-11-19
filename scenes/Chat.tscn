@@ -10,9 +10,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sglf"]
 size = Vector2(18, 13.5)
 
-[node name="Chat" type="RigidBody2D" groups=["cats"]]
-mass = 8.68
-lock_rotation = true
+[node name="Chat" type="CharacterBody2D" groups=["cats"]]
 script = ExtResource("1_crp2f")
 move_scene = ExtResource("2_77v3p")
 idle_scene = ExtResource("3_pvcdq")

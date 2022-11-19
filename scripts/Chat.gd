@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 @export var move_scene: PackedScene
 @export var idle_scene: PackedScene

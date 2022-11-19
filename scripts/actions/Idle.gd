@@ -1,7 +1,8 @@
 extends Node
 
-var gravity: Vector2 = Vector2(0, 981)
+var gravity: float = 981
 
 
-func _ready():
-	get_parent().add_constant_central_force(gravity)
+func _physics_process(delta):
+	get_parent().velocity.y += delta * gravity
+	get_parent().move_and_slide()
