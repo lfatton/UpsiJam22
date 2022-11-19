@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://fncaisomtnof"]
+
+[ext_resource type="Script" path="res://scripts/actions/Move.gd" id="1_b1jnm"]
+
+[node name="Move" type="Node"]
+script = ExtResource("1_b1jnm")

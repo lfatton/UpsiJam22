@@ -1,13 +1,11 @@
 extends RigidBody2D
 
 @export var move_scene: PackedScene
+@export var idle_scene: PackedScene
 
 var happiness: int = 10
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	var move_action = move_scene.instantiate()
-	add_child(move_action)
-
-
+	add_child(move_scene.instantiate())
+	add_child(idle_scene.instantiate())

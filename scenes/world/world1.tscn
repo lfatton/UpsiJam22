@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bup6fufkddi7v"]
 
-[ext_resource type="Texture2D" uid="uid://b80y73vdy2tfc" path="res://assets/Stronghold_Terrain_Tileset.png" id="1_atlbl"]
+[ext_resource type="Texture2D" uid="uid://b80y73vdy2tfc" path="res://assets/sprites/Stronghold_Terrain_Tileset.png" id="1_atlbl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ymu3k"]
 texture = ExtResource("1_atlbl")

@@ -9,6 +9,7 @@ var happiness = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	new_game()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -55,11 +56,9 @@ func _on_start_timer_timeout():
 	$Camera/HUD.update_day(day)
 	new_cat()
 	gameStarted = true
-	
 
 
 func _on_day_timer_timeout():
 	day += 1
 	$Camera/HUD.update_day(day)
 	new_cat()
-	
