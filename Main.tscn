@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://chebwe76ybfpc"]
+[gd_scene load_steps=10 format=3 uid="uid://chebwe76ybfpc"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_8kdw8"]
-[ext_resource type="PackedScene" path="res://Camera.tscn" id="2_t3e0o"]
+[ext_resource type="PackedScene" uid="uid://c1wweel51262r" path="res://Camera.tscn" id="2_t3e0o"]
 [ext_resource type="PackedScene" uid="uid://bup6fufkddi7v" path="res://scenes/world/world1.tscn" id="3_1nrms"]
 [ext_resource type="PackedScene" uid="uid://m34p2hvudxok" path="res://HUD.tscn" id="3_3fj3k"]
 [ext_resource type="PackedScene" uid="uid://gjpgn3u26ki3" path="res://scenes/Chat.tscn" id="4_3ofkk"]
 [ext_resource type="AudioStream" uid="uid://bnp6jn7lk4hte" path="res://assets/sounds/Whimsical Town (Loop).wav" id="6_6sfro"]
 [ext_resource type="Texture2D" uid="uid://bfgx2wofhnflr" path="res://assets/sprites/ugly-tiles.png" id="6_o54e2"]
 [ext_resource type="AudioStream" uid="uid://c8lgx7pdurb3h" path="res://assets/sounds/failure.wav" id="7_1pvrb"]
+[ext_resource type="PackedScene" uid="uid://ckt2y5ymsesgi" path="res://scenes/world/Door.tscn" id="8_75pxc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nmomj"]
 texture = ExtResource("6_o54e2")
@@ -81,7 +82,7 @@ sources/0 = SubResource("TileSetAtlasSource_nmomj")
 
 [sub_resource type="Curve2D" id="Curve2D_3aiq7"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 16, 408, 0, 0, 0, 0, 2264, 408, 0, 0, 0, 0, 2264, 512, 0, 0, 0, 0, 16, 512, 0, 0, 0, 0, 16, 408)
+"points": PackedVector2Array(0, 0, 0, 0, 16, 408, 0, 0, 0, 0, 408, 408, 0, 0, 0, 0, 408, 512, 0, 0, 0, 0, 16, 512, 0, 0, 0, 0, 16, 408)
 }
 point_count = 5
 
@@ -89,13 +90,26 @@ point_count = 5
 script = ExtResource("1_8kdw8")
 cat_scene = ExtResource("4_3ofkk")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="MainBackground" type="ColorRect" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.54902, 0.411765, 0.211765, 1)
+
+[node name="StudioBackground" type="ColorRect" parent="."]
+offset_left = 1487.0
+offset_top = -3.0
+offset_right = 1527.0
+offset_bottom = 37.0
+scale = Vector2(19.8537, 8.32372)
+mouse_filter = 2
+color = Color(0.886275, 0.882353, 0.764706, 1)
+
+[node name="Door" parent="." instance=ExtResource("8_75pxc")]
+position = Vector2(1487, 230)
 
 [node name="Camera" parent="." instance=ExtResource("2_t3e0o")]
 position = Vector2(304, 1168)
@@ -128,6 +142,11 @@ stream = ExtResource("6_6sfro")
 [node name="GameOver" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_1pvrb")
 
+[node name="Door2" parent="." instance=ExtResource("8_75pxc")]
+position = Vector2(156, 1194)
+
+[connection signal="input_event" from="Door" to="." method="_on_door_input_event"]
+[connection signal="mouse_entered" from="Door" to="." method="_on_door_mouse_entered"]
 [connection signal="start_game" from="Camera/HUD" to="." method="new_game"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]

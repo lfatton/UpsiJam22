@@ -16,6 +16,7 @@ size = Vector2(18, 16.4167)
 [node name="Chat" type="CharacterBody2D" groups=["cats"]]
 material = ExtResource("1_18252")
 scale = Vector2(3, 3)
+platform_wall_layers = 1
 script = ExtResource("1_crp2f")
 move_scene = ExtResource("2_77v3p")
 idle_scene = ExtResource("3_pvcdq")

@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckt2y5ymsesgi"]
+
+[ext_resource type="Script" path="res://scenes/world/Door.gd" id="1_i8vdq"]
+[ext_resource type="Texture2D" uid="uid://cfn6bw6duyvsa" path="res://assets/sprites/door/door-closed.png" id="1_tgfh2"]
+[ext_resource type="Texture2D" uid="uid://c2mdqkdaxhu4i" path="res://assets/sprites/door/door-open.png" id="2_itxsl"]
+[ext_resource type="FontFile" uid="uid://c6onnnit7lbi1" path="res://assets/fonts/Xolonium-Regular.ttf" id="4_o5df8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_24pue"]
+animations = [{
+"frames": [ExtResource("1_tgfh2")],
+"loop": true,
+"name": &"closed",
+"speed": 5.0
+}, {
+"frames": [ExtResource("2_itxsl")],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uvgq"]
+size = Vector2(6.66666, 64.5)
+
+[node name="Door" type="Area2D"]
+scale = Vector2(3, 3)
+priority = 1.0
+script = ExtResource("1_i8vdq")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+frames = SubResource("SpriteFrames_24pue")
+animation = &"closed"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 0.333333)
+shape = SubResource("RectangleShape2D_8uvgq")
+
+[node name="InfoDoor" type="Label" parent="."]
+visible = false
+offset_left = -26.0
+offset_top = -43.3333
+offset_right = 83.0
+offset_bottom = -20.3333
+scale = Vector2(0.486999, 0.446154)
+theme_override_fonts/font = ExtResource("4_o5df8")
+text = "Click to open"
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
