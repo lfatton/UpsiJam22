@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://d10ywgcto66kl"]
+[gd_scene load_steps=5 format=3 uid="uid://d10ywgcto66kl"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_8kdw8"]
 [ext_resource type="PackedScene" path="res://Camera.tscn" id="2_t3e0o"]
 [ext_resource type="PackedScene" uid="uid://bup6fufkddi7v" path="res://scenes/world/world1.tscn" id="3_1nrms"]
+[ext_resource type="PackedScene" uid="uid://gjpgn3u26ki3" path="res://scenes/Chat.tscn" id="4_3ofkk"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_8kdw8")
@@ -16,5 +17,10 @@ grow_vertical = 2
 color = Color(0.54902, 0.411765, 0.211765, 1)
 
 [node name="Camera" parent="." instance=ExtResource("2_t3e0o")]
+position = Vector2(581, 579)
+zoom = Vector2(5, 5)
 
 [node name="TileMap" parent="." instance=ExtResource("3_1nrms")]
+
+[node name="Chat" parent="." instance=ExtResource("4_3ofkk")]
+position = Vector2(578, 404)

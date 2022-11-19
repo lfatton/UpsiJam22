@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://gjpgn3u26ki3"]
+
+[ext_resource type="Texture2D" uid="uid://dkar4af6llerx" path="res://assets/chat/head.png" id="1_0uheg"]
+[ext_resource type="Texture2D" uid="uid://tbxtl1hht4o1" path="res://assets/chat/better-body.png" id="2_hysq4"]
+[ext_resource type="Texture2D" uid="uid://ct51b31ofa0aq" path="res://assets/chat/tail.png" id="3_1crbh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1sglf"]
+size = Vector2(19, 14)
+
+[node name="Chat" type="RigidBody2D"]
+mass = 8.68
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6.5, 15)
+shape = SubResource("RectangleShape2D_1sglf")
+
+[node name="Sprites" type="Node2D" parent="."]
+scale = Vector2(0.3, 0.3)
+
+[node name="Head" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("1_0uheg")
+
+[node name="Body" type="Sprite2D" parent="Sprites"]
+position = Vector2(-22, 41)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("2_hysq4")
+
+[node name="Tail" type="Sprite2D" parent="Sprites"]
+position = Vector2(-76, 40)
+rotation = 3.14159
+scale = Vector2(1, -1)
+texture = ExtResource("3_1crbh")
