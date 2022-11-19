@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://gjpgn3u26ki3"]
+[gd_scene load_steps=6 format=3 uid="uid://gjpgn3u26ki3"]
 
 [ext_resource type="Texture2D" uid="uid://dkar4af6llerx" path="res://assets/chat/head.png" id="1_0uheg"]
+[ext_resource type="Script" path="res://scripts/Chat.gd" id="1_crp2f"]
 [ext_resource type="Texture2D" uid="uid://tbxtl1hht4o1" path="res://assets/chat/better-body.png" id="2_hysq4"]
 [ext_resource type="Texture2D" uid="uid://ct51b31ofa0aq" path="res://assets/chat/tail.png" id="3_1crbh"]
 
@@ -9,6 +10,7 @@ size = Vector2(19, 14)
 
 [node name="Chat" type="RigidBody2D"]
 mass = 8.68
+script = ExtResource("1_crp2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6.5, 15)
