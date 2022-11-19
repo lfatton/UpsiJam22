@@ -23,7 +23,15 @@ func _process(delta):
 		game_over()
 
 
+func game_over():
+	$Music.stop()
+	get_tree().call_group("cats", "queue_free")
+	$DayTimer.stop()
+	$Camera/HUD.show_game_over()
+
+
 func new_game():
+	$Music.play()
 	day = 0
 	happiness = 0
 	$StartTimer.start()
@@ -39,11 +47,6 @@ func new_cat():
 	if(happiness > 10):
 		happiness = -10
 	$Camera/HUD.update_happiness(happiness)
-
-func game_over():
-	get_tree().call_group("cats", "queue_free")
-	$DayTimer.stop()
-	$Camera/HUD.show_game_over()
 
 
 func _on_start_timer_timeout():
