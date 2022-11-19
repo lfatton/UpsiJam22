@@ -15,15 +15,11 @@ func _process(delta):
 	if (time_between_moves <= time_since_last_move):
 		time_since_last_move = 0
 		time_between_moves = randf_range(1, 5)
-		speed = randf_range(-10, 10)
-		velocity = Vector2(300 * speed * delta, 1)
-		if (velocity.x < 0):
-			get_parent().scale.x = -1
-		else:
-			get_parent().scale.x = 1
-	if (velocity.x != 0 && velocity.y != 0):
-		move()
+		speed = randf_range(-3000, 3000)
+		velocity = Vector2(speed, 0)
+		print(velocity, time_between_moves)
+	move()
 
 func move():
-	get_parent().move_and_collide(velocity)
+	get_parent().add_constant_central_force(velocity)
 
