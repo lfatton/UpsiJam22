@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://chebwe76ybfpc"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_8kdw8"]
-[ext_resource type="PackedScene" uid="uid://c1wweel51262r" path="res://Camera.tscn" id="2_t3e0o"]
+[ext_resource type="PackedScene" path="res://Camera.tscn" id="2_t3e0o"]
 [ext_resource type="PackedScene" uid="uid://bup6fufkddi7v" path="res://scenes/world/world1.tscn" id="3_1nrms"]
 [ext_resource type="PackedScene" uid="uid://m34p2hvudxok" path="res://HUD.tscn" id="3_3fj3k"]
-[ext_resource type="PackedScene" uid="uid://gjpgn3u26ki3" path="res://scenes/Chat.tscn" id="4_3ofkk"]
+[ext_resource type="PackedScene" uid="uid://cpkac8ow1w2gv" path="res://scenes/Chat.tscn" id="4_3ofkk"]
 [ext_resource type="AudioStream" uid="uid://bnp6jn7lk4hte" path="res://assets/sounds/Whimsical Town (Loop).wav" id="6_6sfro"]
 [ext_resource type="AudioStream" uid="uid://c8lgx7pdurb3h" path="res://assets/sounds/failure.wav" id="7_1pvrb"]
 

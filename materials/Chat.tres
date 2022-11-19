@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c5aciyvu2mg3j"]
+
+[ext_resource type="Shader" path="res://materials/shaders/Chat.gdshader" id="1_5fvx2"]
+
+[resource]
+shader = ExtResource("1_5fvx2")
+shader_parameter/ear_color = null
+shader_parameter/eye_color = null
+shader_parameter/main_color = null
