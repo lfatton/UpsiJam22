@@ -6,15 +6,13 @@ signal start_game
 func show_message(text):
 	$Message.text = text
 	$Message.show()
-	$MessageTimer.start()
 
 
 func show_game_over():
 	show_message("Oh no! All your cats are unhappy :(\nGame Over :((")
-	await $MessageTimer
-	$Message.text = "Keep your cats happy by taking\ntheir picture once a day!"
-	$Message.show()
-	await get_tree().create_timer(1)
+	await get_tree().create_timer(3).timeout
+	show_message("Keep your cats happy by taking\ntheir picture once a day!")
+	await get_tree().create_timer(1).timeout
 	$StartButton.show()
 
 
@@ -27,7 +25,7 @@ func update_time_left(time):
 
 
 func update_happiness(score):
-	$HappinessScore.text = "Global happiness " + str(score)
+	$HappinessScore.text = "Happiness " + str(score)
 
 
 func _on_start_button_pressed():

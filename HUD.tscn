@@ -15,7 +15,7 @@ offset_right = 518.0
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_214ob")
 theme_override_font_sizes/font_size = 48
-text = "Global Happiness 10"
+text = "Happiness 0"
 
 [node name="DaysPassed" type="Label" parent="."]
 anchors_preset = 1
@@ -26,7 +26,7 @@ offset_bottom = 81.0
 grow_horizontal = 0
 theme_override_fonts/font = ExtResource("1_214ob")
 theme_override_font_sizes/font_size = 48
-text = "Cats 1"
+text = "Cats 0"
 horizontal_alignment = 2
 
 [node name="StartButton" type="Button" parent="."]
