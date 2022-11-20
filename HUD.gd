@@ -25,6 +25,7 @@ func update_time_left(time):
 
 func update_happiness(score):
 	$HappinessScore.text = "Happiness " + str(score)
+
 	
 func update_picture(cats_counter):
 	$PictureCount.text = "Cats in picture: " + str(cats_counter)

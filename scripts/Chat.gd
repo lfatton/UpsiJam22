@@ -58,17 +58,23 @@ func _set_materials():
 	$Tail.set_material(make_material())
 	$HappyTail.set_material(make_material())
 	$RabaTail.set_material(make_material())
-
+	
+	
+func _blacken_material(body_part):
+	body_part.material.set_shader_parameter("main_color", Vector4(0.1 * randf(), 0.0, 0.0, 1.0))
+	body_part.material.set_shader_parameter("secondary_color", Vector4(0.0, 0.1 * randf(), 0.0, 1.0))
+	
 
 func _randomize_body_parts():
 	var die = randi() % 100
 	
 	if die < 5:
 		iamraba = true
-		remove_child($Tail)
-		remove_child($HappyTail)
+		$Tail.hide()
+		$HappyTail.hide()
 	else:
-		remove_child($RabaTail)
+		$RabaTail.hide()
+
 
 func check_happiness():
 	if iamraba:
@@ -84,6 +90,13 @@ func check_happiness():
 		$HappyTail.show()
 		if ($HappyTail.scale.y < 0):
 			$HappyTail.scale.y *= -1
+	
+	isFeral = happiness < -50
+	if isFeral:
+		_blacken_material($Body)
+		_blacken_material($Tail)
+		_blacken_material($HappyTail)
+		_blacken_material($RabaTail)
 
 
 func _on_input_event(viewport, event, shape_idx):
