@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://gjpgn3u26ki3"]
+[gd_scene load_steps=13 format=3 uid="uid://gjpgn3u26ki3"]
 
 [ext_resource type="Texture2D" uid="uid://dkar4af6llerx" path="res://assets/sprites/chat/head.png" id="1_0uheg"]
 [ext_resource type="Material" uid="uid://c5aciyvu2mg3j" path="res://materials/Chat.tres" id="1_18252"]
@@ -13,6 +13,24 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sglf"]
 size = Vector2(18, 16.4167)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_03twk"]
+animations = [{
+"frames": [ExtResource("9_3fdb3")],
+"loop": true,
+"name": &"feral",
+"speed": 5.0
+}, {
+"frames": [ExtResource("8_e6ntb")],
+"loop": true,
+"name": &"happy",
+"speed": 5.0
+}, {
+"frames": [ExtResource("3_1crbh")],
+"loop": true,
+"name": &"neutral",
+"speed": 5.0
+}]
 
 [node name="Chat" type="CharacterBody2D" groups=["cats"]]
 material = ExtResource("1_18252")
@@ -55,3 +73,8 @@ texture = ExtResource("2_hysq4")
 position = Vector2(7, -6)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_0uheg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+frames = SubResource("SpriteFrames_03twk")
+animation = &"sad"

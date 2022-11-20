@@ -14,6 +14,7 @@ func _process(delta):
 	
 	if (die == 6):
 		jump_instance.jump()
+	check_happiness()
 
 
 func make_material():
@@ -32,7 +33,7 @@ func _ready():
 	add_child(jump_instance)
 	
 	_set_materials()
-	_randomize_body_parts()
+	#_randomize_body_parts()
 	
 	
 func _set_materials():
@@ -57,3 +58,25 @@ func _randomize_body_parts():
 		remove_child($RabaTail)
 		if die < 75:
 			$HappyTail.scale.y *= -1
+
+
+func check_happiness():
+	if happiness >= 6:
+		$Tail.hide()
+		$RabaTail.hide()
+		$HappyTail.show()
+	elif happiness < 6 and happiness > 0:
+		$HappyTail.hide()
+		$RabaTail.hide()
+		$Tail.show()
+	elif happiness <= 0 and happiness > -50:
+		$Tail.hide()
+		$RabaTail.hide()
+		$HappyTail.show()
+		if ($HappyTail.scale.y < 0):
+			$HappyTail.scale.y *= -1
+	elif happiness <= -50:
+		$HappyTail.hide()
+		$Tail.hide()
+		$RabaTail.show()
+		
