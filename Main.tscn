@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://chebwe76ybfpc"]
+[gd_scene load_steps=17 format=3 uid="uid://chebwe76ybfpc"]
 
 [ext_resource type="Script" path="res://Main.gd" id="1_8kdw8"]
 [ext_resource type="PackedScene" uid="uid://c1wweel51262r" path="res://Camera.tscn" id="2_t3e0o"]
 [ext_resource type="PackedScene" uid="uid://bup6fufkddi7v" path="res://scenes/world/world1.tscn" id="3_1nrms"]
 [ext_resource type="PackedScene" uid="uid://m34p2hvudxok" path="res://HUD.tscn" id="3_3fj3k"]
+[ext_resource type="FontFile" uid="uid://c6onnnit7lbi1" path="res://assets/fonts/Xolonium-Regular.ttf" id="3_kkri4"]
 [ext_resource type="PackedScene" uid="uid://gjpgn3u26ki3" path="res://scenes/Chat.tscn" id="4_3ofkk"]
 [ext_resource type="AudioStream" uid="uid://bnp6jn7lk4hte" path="res://assets/sounds/Whimsical Town (Loop).wav" id="6_6sfro"]
 [ext_resource type="Texture2D" uid="uid://bfgx2wofhnflr" path="res://assets/sprites/ugly-tiles.png" id="6_o54e2"]
@@ -330,6 +331,23 @@ shape = SubResource("RectangleShape2D_isc6v")
 wait_time = 2.0
 one_shot = true
 
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 647.0
+offset_top = -280.0
+offset_right = 914.0
+offset_bottom = -219.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.70368)
+theme_override_fonts/font = ExtResource("3_kkri4")
+theme_override_font_sizes/font_size = 18
+text = "Press SPACE to take a pic :)"
+
 [node name="Door" parent="." instance=ExtResource("8_75pxc")]
 position = Vector2(1499, 265)
 scale = Vector2(3.19464, 3.26722)
@@ -357,5 +375,7 @@ position = Vector2(982, 0)
 rotation = 0.0103914
 
 [connection signal="start_game" from="Camera/HUD" to="." method="new_game"]
+[connection signal="body_entered" from="TileMap/PhotoZone" to="TileMap/PhotoZone" method="_on_body_entered"]
+[connection signal="body_exited" from="TileMap/PhotoZone" to="TileMap/PhotoZone" method="_on_body_exited"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
 [connection signal="timeout" from="DayTimer" to="." method="_on_day_timer_timeout"]
