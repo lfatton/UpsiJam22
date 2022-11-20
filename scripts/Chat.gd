@@ -61,7 +61,6 @@ func _randomize_body_parts():
 	else:
 		remove_child($RabaTail)
 
-
 func check_happiness():
 	if iamraba:
 		return
@@ -77,3 +76,7 @@ func check_happiness():
 		if ($HappyTail.scale.y < 0):
 			$HappyTail.scale.y *= -1
 		
+func _on_photo_zone_area_entered(area):
+	print(area)
+	area.cats.append(self)
+	print(area.cats)

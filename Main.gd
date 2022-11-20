@@ -54,7 +54,7 @@ func new_cat():
 	var cat = cat_scene.instantiate()
 	var cat_spawn_location = get_node("CatPath/CatSpawnLocation")
 	cat_spawn_location.progress = randi()
-	cat.position = cat_spawn_location.position
+	cat.position = cat_spawn_location.global_position
 	add_child(cat)
 
 
