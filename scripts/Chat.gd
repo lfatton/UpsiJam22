@@ -3,10 +3,15 @@ extends CharacterBody2D
 @export var move_scene: PackedScene
 @export var idle_scene: PackedScene
 @export var jump_scene: PackedScene
+@export var stop_scene: PackedScene
+@export var teleport_scene: PackedScene
 
 var jump_instance
+var stop_instance
+var teleport_instance
 
 var happiness: int = 100
+var isFeral = false
 var iamraba: bool = false
 
 
@@ -34,11 +39,15 @@ func make_material(pattern_strength=null):
 
 func _ready():
 	jump_instance = jump_scene.instantiate()
-	
+	stop_instance = stop_scene.instantiate()
+	teleport_instance = teleport_scene.instantiate()
+
 	add_child(move_scene.instantiate())
 	add_child(idle_scene.instantiate())
 	add_child(jump_instance)
-	
+	add_child(stop_instance)
+	add_child(teleport_instance)
+
 	_set_materials()
 	_randomize_body_parts()
 	
@@ -75,4 +84,20 @@ func check_happiness():
 		$HappyTail.show()
 		if ($HappyTail.scale.y < 0):
 			$HappyTail.scale.y *= -1
-		
+
+
+func _on_input_event(viewport, event, shape_idx):
+	if Input.is_action_pressed("stop_cat") and happiness > -50:
+		stop_instance.stop()
+	if Input.is_action_pressed("teleport_cat") and happiness > -50:
+		teleport_instance.teleport()
+
+
+func _on_mouse_entered():
+	var hud = get_node("/root/Main/Camera/HUD")
+	hud.show_cat_info(isFeral)
+
+
+func _on_mouse_exited():
+	var hud = get_node("/root/Main/Camera/HUD")
+	hud.hide_cat_info()

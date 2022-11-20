@@ -38,3 +38,12 @@ func _on_start_button_pressed():
 
 func _on_message_timer_timeout():
 	$Message.hide()
+	
+
+func show_cat_info(isFeral):
+	if (isFeral):
+		$CatInfo.text = "Oh no! Your cat is feral :("
+	$CatInfo.show()
+
+func hide_cat_info():
+	$CatInfo.hide()

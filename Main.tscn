@@ -277,6 +277,12 @@ _data = {
 }
 point_count = 5
 
+[sub_resource type="Curve2D" id="Curve2D_hcxgp"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 982, 0, 0, 0, 0, 0, 2233, 13, 0, 0, 0, 0, 2220, 507, 0, 0, 0, 0, 986, 502, 0, 0, 0, 0, 982, 0)
+}
+point_count = 5
+
 [node name="Main" type="Node"]
 script = ExtResource("1_8kdw8")
 cat_scene = ExtResource("4_3ofkk")
@@ -342,6 +348,17 @@ stream = ExtResource("6_6sfro")
 
 [node name="GameOver" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("7_1pvrb")
+
+[node name="Door" parent="." instance=ExtResource("8_75pxc")]
+position = Vector2(1492, 267)
+scale = Vector2(3.3, 3.3)
+
+[node name="CatTeleportPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_hcxgp")
+
+[node name="CatTeleportLocation" type="PathFollow2D" parent="CatTeleportPath"]
+position = Vector2(982, 0)
+rotation = 0.0103914
 
 [connection signal="start_game" from="Camera/HUD" to="." method="new_game"]
 [connection signal="timeout" from="StartTimer" to="." method="_on_start_timer_timeout"]
