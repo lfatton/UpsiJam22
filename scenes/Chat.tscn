@@ -61,10 +61,6 @@ position = Vector2(7, -6)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_0uheg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-visible = false
-frames = SubResource("SpriteFrames_03twk")
-
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
