@@ -6,6 +6,7 @@ var day
 var gameStarted = false
 var gameOver = false
 var happiness = 0
+var firstTime = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -59,7 +60,16 @@ func new_cat():
 
 
 func update_picture(cats_counter):
-	$Camera/HUD.update_picture(cats_counter)
+	var areAllPresent = cats_counter == day
+	
+	if areAllPresent and firstTime:
+		firstTime = false
+		$DayTimer.set_wait_time(1)
+		$DayTimer.start()
+		for cat in get_tree().get_nodes_in_group("cats"):
+			cat.happiness += 5
+	
+	$Camera/HUD.update_picture(cats_counter, areAllPresent)
 
 
 func _on_start_timer_timeout():
@@ -71,6 +81,9 @@ func _on_start_timer_timeout():
 
 
 func _on_day_timer_timeout():
+	$DayTimer.set_wait_time(60)
+	$DayTimer.start()
 	day += 1
+	firstTime = true
 	$Camera/HUD.update_day(day)
 	new_cat()

@@ -1,6 +1,6 @@
 extends Camera2D
 
-@export var speed = 400
+@export var speed = 600
 var screen_size
 
 

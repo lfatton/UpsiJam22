@@ -75,7 +75,7 @@ grow_horizontal = 0
 size_flags_horizontal = 4
 theme_override_fonts/font = ExtResource("1_214ob")
 theme_override_font_sizes/font_size = 26
-text = "Next day in 2:00"
+text = "Next day in 1:00"
 
 [node name="MessageTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -88,9 +88,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -236.0
-offset_top = -122.0
-offset_right = 236.0
+offset_left = -238.0
+offset_top = -241.0
+offset_right = 234.0
+offset_bottom = -119.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("1_214ob")

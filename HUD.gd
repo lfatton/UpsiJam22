@@ -27,9 +27,11 @@ func update_happiness(score):
 	$HappinessScore.text = "Happiness " + str(score)
 
 	
-func update_picture(cats_counter):
-	$PictureCount.text = "Cats in picture: " + str(cats_counter)
-
+func update_picture(cats_counter, areAllCatPresent):
+	if (areAllCatPresent):
+		$PictureCount.text = "Cats in picture: " + str(cats_counter) + " Yaaay! Well done! All cats in pic!"
+	else:
+		$PictureCount.text = "Cats in picture: " + str(cats_counter) + " Nooo, some cats are missing from the picture :("
 
 func _on_start_button_pressed():
 	$StartButton.hide()
