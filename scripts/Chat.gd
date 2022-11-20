@@ -20,8 +20,10 @@ func _process(delta):
 func make_material():
 	var new_material = get_material().duplicate()
 	new_material.set_shader_parameter("main_color", Vector4(randf(), randf(), randf(), 1.0))
+	new_material.set_shader_parameter("secondary_color", Vector4(randf(), randf(), randf(), 1.0))
 	new_material.set_shader_parameter("eye_color", Vector4(randf(), randf(), randf(), 1.0))
 	new_material.set_shader_parameter("ear_color", Vector4(randf(), randf(), randf(), 1.0))
+	new_material.set_shader_parameter("seed", randf())
 	return new_material
 	
 
