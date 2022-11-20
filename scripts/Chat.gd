@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 var jump_instance
 
-var happiness: int = 10
+var happiness: int = 100
 
 
 func _process(delta):
@@ -61,11 +61,11 @@ func _randomize_body_parts():
 
 
 func check_happiness():
-	if happiness >= 6:
+	if happiness >= 60:
 		$Tail.hide()
 		$RabaTail.hide()
 		$HappyTail.show()
-	elif happiness < 6 and happiness > 0:
+	elif happiness < 60 and happiness > 0:
 		$HappyTail.hide()
 		$RabaTail.hide()
 		$Tail.show()

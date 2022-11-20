@@ -12,4 +12,4 @@ func jump():
 			get_parent().velocity.x = jump_speed / 2
 		else: 
 			get_parent().velocity.x = -jump_speed / 2
-			get_parent().happiness -= 1
+			get_parent().happiness -= 5
