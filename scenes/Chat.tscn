@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://gjpgn3u26ki3"]
+[gd_scene load_steps=12 format=3 uid="uid://gjpgn3u26ki3"]
 
 [ext_resource type="Texture2D" uid="uid://dkar4af6llerx" path="res://assets/sprites/chat/head.png" id="1_0uheg"]
 [ext_resource type="Material" uid="uid://c5aciyvu2mg3j" path="res://materials/Chat.tres" id="1_18252"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://tbxtl1hht4o1" path="res://assets/sprites/chat/better-body.png" id="2_hysq4"]
 [ext_resource type="Texture2D" uid="uid://ct51b31ofa0aq" path="res://assets/sprites/chat/tail.png" id="3_1crbh"]
 [ext_resource type="PackedScene" uid="uid://dusx2d14ehw6t" path="res://scenes/actions/Idle.tscn" id="3_pvcdq"]
+[ext_resource type="PackedScene" uid="uid://dxm77fuycee21" path="res://scenes/actions/Jump.tscn" id="5_8ipc1"]
 [ext_resource type="Texture2D" uid="uid://okofeqir02fy" path="res://assets/sprites/chat/happy-tail.png" id="8_e6ntb"]
 [ext_resource type="Texture2D" uid="uid://erfwbp2s3hi7" path="res://assets/sprites/chat/raba-tail.png" id="9_3fdb3"]
 
@@ -20,6 +21,7 @@ platform_wall_layers = 1
 script = ExtResource("1_crp2f")
 move_scene = ExtResource("2_77v3p")
 idle_scene = ExtResource("3_pvcdq")
+jump_scene = ExtResource("5_8ipc1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1.45833)

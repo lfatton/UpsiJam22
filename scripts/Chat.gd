@@ -2,8 +2,18 @@ extends CharacterBody2D
 
 @export var move_scene: PackedScene
 @export var idle_scene: PackedScene
+@export var jump_scene: PackedScene
+
+var jump_instance
 
 var happiness: int = 10
+
+
+func _process(delta):
+	var die = randi() % 100
+	
+	if (die == 6):
+		jump_instance.jump()
 
 
 func make_material():
@@ -15,8 +25,11 @@ func make_material():
 	
 
 func _ready():
+	jump_instance = jump_scene.instantiate()
+	
 	add_child(move_scene.instantiate())
 	add_child(idle_scene.instantiate())
+	add_child(jump_instance)
 	
 	_set_materials()
 	_randomize_body_parts()
