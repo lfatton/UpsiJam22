@@ -17,13 +17,17 @@ func _process(delta):
 	check_happiness()
 
 
-func make_material():
+func make_material(pattern_strength=null):
 	var new_material = get_material().duplicate()
 	new_material.set_shader_parameter("main_color", Vector4(randf(), randf(), randf(), 1.0))
 	new_material.set_shader_parameter("secondary_color", Vector4(randf(), randf(), randf(), 1.0))
 	new_material.set_shader_parameter("eye_color", Vector4(randf(), randf(), randf(), 1.0))
 	new_material.set_shader_parameter("ear_color", Vector4(randf(), randf(), randf(), 1.0))
 	new_material.set_shader_parameter("seed", randf())
+	var strength = randf()
+	if pattern_strength != null:
+		strength = pattern_strength
+	new_material.set_shader_parameter("pattern_strength", strength)
 	return new_material
 	
 
@@ -40,7 +44,7 @@ func _ready():
 	
 func _set_materials():
 	$Body.set_material(make_material())
-	$Head.set_material(make_material())
+	$Head.set_material(make_material(randf() * 0.2))
 	$Tail.set_material(make_material())
 	$HappyTail.set_material(make_material())
 	$RabaTail.set_material(make_material())
