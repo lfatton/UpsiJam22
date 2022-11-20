@@ -77,4 +77,3 @@ texture = ExtResource("1_0uheg")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 visible = false
 frames = SubResource("SpriteFrames_03twk")
-animation = &"sad"
