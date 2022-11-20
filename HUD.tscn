@@ -6,6 +6,14 @@
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_4ry1j")
 
+[node name="PictureCount" type="Label" parent="."]
+offset_top = 1231.0
+offset_right = 518.0
+offset_bottom = 1292.0
+theme_override_fonts/font = ExtResource("1_214ob")
+theme_override_font_sizes/font_size = 48
+text = "Cats in picture: 0"
+
 [node name="HappinessScore" type="Label" parent="."]
 offset_right = 518.0
 offset_bottom = 61.0

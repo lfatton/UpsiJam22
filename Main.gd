@@ -58,6 +58,10 @@ func new_cat():
 	add_child(cat)
 
 
+func update_picture(cats_counter):
+	$Camera/HUD.update_picture(cats_counter)
+
+
 func _on_start_timer_timeout():
 	$DayTimer.start()
 	day += 1

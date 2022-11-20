@@ -76,7 +76,7 @@ one_shot = true
 wait_time = 120.0
 
 [node name="CatPath" type="Path2D" parent="."]
-position = Vector2(54, -448.04)
+position = Vector2(1675, -448.04)
 scale = Vector2(1, 1.14851)
 curve = SubResource("Curve2D_3aiq7")
 
