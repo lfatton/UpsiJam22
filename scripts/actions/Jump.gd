@@ -7,5 +7,10 @@ var jumping = false
 
 func jump():
 	if get_parent().is_on_floor():
+		var die = randi() % 2
 		jumping = true
 		get_parent().velocity.y = jump_speed
+		if (die < 1):
+			get_parent().velocity.x = jump_speed / 2
+		else: 
+			get_parent().velocity.x = -jump_speed / 2
